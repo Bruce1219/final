@@ -1,0 +1,1302 @@
+@import url(//fonts.googleapis.com/earlyaccess/cwtexfangsong.css);
+body{
+  background:#ece9cf;
+}
+html,
+body,
+.ground {
+  height: 100%;
+}
+/*TRAIN*/
+
+.train {
+  position: relative;
+  bottom: 1px;
+  width: 310px;
+  z-index: 100;
+}
+
+.wagon,
+.cabin,
+.chimney {
+  background :yellow;
+  border-radius: 4px 4px 0 0;
+  border-top: 4px solid #ffe000;
+}
+
+.wagon,
+.motor {
+  background :yellow;
+  border-bottom: 2px solid  #ffe000;
+}
+
+.wagon,
+.locomotive {
+  display: inline-block;
+  width: 70px;
+  height: 55px;
+  background-color: red;
+  position: relative;
+}
+
+
+/*WHEELS*/
+
+.wagon:before,
+.wagon:after,
+.motor:before,
+.motor:after,
+.cabin:after {
+  content: ' ';
+  color: #fff;
+  padding: 6px;
+  position: absolute;
+  border-radius: 46%;
+  border: 6px solid #333;
+  bottom: -10px;
+  background-color: #666;
+  -webkit-animation: spin 4s linear infinite;
+  -moz-animation: spin 4s linear infinite;
+  animation: spin 4s linear infinite;
+}
+
+.wagon:before {
+  left: 6px;
+}
+
+.wagon:after {
+  right: 6px;
+}
+
+.motor:before {
+  left: 32px;
+}
+
+.motor:after {
+  right: 4px;
+}
+
+.cabin:after {
+  bottom: -50px;
+  padding: 8px;
+  left: 3px;
+}
+
+
+/*LOCOMOTIVE*/
+
+.locomotive {
+  background-color: transparent;
+}
+
+.locomotive .cabin {
+  width: 58px;
+  height: 35px;
+  background-color: red;
+  position: relative;
+  z-index: 1;
+  border-radius: 8px 8px 0 0;
+}
+
+
+/*locomotive window*/
+
+.locomotive .cabin:before {
+  content: ' ';
+  width: 25px;
+  height: 18px;
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  border-radius: 3px;
+  border: 3px solid pink;
+  background-color: #f1f1f1;
+}
+
+.locomotive .motor {
+  display: inline-block;
+  width: 85px;
+  height: 40px;
+  background-color: red;
+  position: relative;
+  border-radius: 0 8px 0px 0px;
+}
+
+.locomotive .chimney {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background-color: red;
+  right: -6px;
+  bottom: 10px;
+  -webkit-animation: puf 4s 2;
+  animation: puf 4s 2;
+}
+
+.locomotive .light {
+  content: " ";
+  position: absolute;
+  right: -10px;
+  bottom: 0;
+  border-radius: 50%;
+  border: 3px solid pink;
+}
+
+.train {
+  -webkit-animation: voyage 20s linear infinite;
+  animation: voyage 20s linear infinite;
+}
+/*ANIMATIONS*/
+@-webkit-keyframes puf {
+  0% {
+    bottom: 0px
+  }
+  25% {
+    bottom: -1px;
+  }
+  100% {
+    bottom: 5px;
+  }
+}
+
+@keyframes puf {
+  0% {
+    bottom: 0px
+  }
+  25% {
+    bottom: -1px;
+  }
+  100% {
+    bottom: 5px;
+  }
+}
+
+@-webkit-keyframes wind {
+  0% {
+    right: 0;
+  }
+  100% {
+    right: 110%;
+  }
+}
+
+@keyframes wind {
+  0% {
+    right: 0;
+  }
+  100% {
+    right: 110%;
+  }
+}
+
+@-webkit-keyframes voyage {
+  0% {
+    left: -310px;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+@keyframes voyage {
+  0% {
+    left: -310px;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+/* 導覽列 */
+.header{
+    /* background: linear-gradient(-20deg,burlywood,#fe70d8); */
+    background-color: #a68063;
+}
+.container{
+    display: flex;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+.logo{
+    width: 150px;
+}
+.logo img{
+    width: 100%;
+    vertical-align: middle;
+}
+.main-nav{
+    font-size:20px;
+    margin: auto;
+    display:flex;
+}
+.main-nav a{
+    text-decoration: none;
+    color: #fff;
+    padding: 5px 1em;
+    position: relative;
+    transform: translateY(0px);
+/*     display: inline-block; */
+    /* +inline block */
+    transition: 1s;
+}
+.main-nav a:hover{
+    transform: translateY(-5px);
+}
+.main-nav a::after{
+    content: '';
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    height: 0;
+    bottom: -5px;
+    border-bottom: 1px solid #fff;
+    transition: .3s;
+}
+.main-nav a:hover::after{
+    left: 0;
+    right: 0;
+}
+
+/* banner */
+.banner{
+    width: 100%;
+    height: 600px;
+    background-color: #ece9cf;
+    background: linear-gradient(115deg, #dfc8b0 60%, transparent 70%) center center /100% 100%
+    , url("https://liangeric0115.github.io/image/ID_210622.jpg") right center / auto 100%;
+}
+.banner-text{
+    font-family: 'cwTeXFangSong', serif;
+    color:#a68063;
+    padding-top: 100px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
+.banner-text h1{
+    font-size: 60px;
+    border-bottom: 1px solid #a68063;
+    padding-bottom: 20px;
+}
+.banner-text small{
+    display: block;
+    font-size: 30px;
+    margin-top: 10px;
+}
+.banner-text p{
+    font-size: 30px;
+}
+@media screen and (max-width: 800px) {
+    .banner-text h1{
+        font-size: 40px;
+        border-bottom: 1px solid #333;
+        padding-bottom: 20px;
+    }
+    .banner-text small{
+        display: block;
+        font-size: 30px;
+    }
+    .banner-text p{
+        font-size: 10px;
+    }
+}
+
+
+
+
+
+/* 版面八 */
+.outside{
+    width: 100%;
+    height: 550px;
+    background-color: #ece9cf;
+}
+.main-title{
+    color:#b19c7d;
+    font-family: 'cwTeXFangSong', serif;
+    width: 1200px;
+    margin: auto;
+    text-align: top;
+}
+.main-title h1{
+    width: 100%;
+    flex-shrink: 0;
+    box-sizing: border-box;
+    font-size: 80px;
+    margin-bottom: .5em;
+    display: flex;
+}
+.main-title h1::before,
+.main-title h1::after{
+    content: '';
+    display: block;
+    height: 10px;
+    /* width: 2em; */
+    flex-grow: 1;
+    /* 拿掉寬度，一樣可以填滿 */
+    background-color: #b19c7d;
+    margin: auto;
+}
+.main-title h1::before{
+    margin-right: 1em;
+}
+.main-title h1::after{
+    margin-left: 1em;
+}
+.main-title .text{
+    line-height:50px;
+    font-size: 30px;
+    flex-shrink: 0;
+    box-sizing: border-box;
+}
+.main-title .text p{
+    margin-bottom: 2em;
+}
+.main-title .text p:first-child::first-letter{
+    font-size: 60px;
+    float: ;
+    padding-right: 10px;
+}
+.outside1{
+    width: 100%;
+    height: 1350px;
+    background-color: #ece9cf;
+}
+.btn1:hover {
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
+  transform: translate(0px, -5px);
+}
+.btn1 {
+  position: absolute;
+  width: 350px;
+  height: 300px;
+  margin-left: 200px;
+  margin-top: 10px;
+  border: none;
+  display: block; /*因a為行內元素無法設定寬高 要改設成block*/
+  background-image: url(" https://1083836.github.io/hinokivillage/3333333.png");
+
+  /*下面此三行為最重要的技巧部份*/
+  text-indent: 104%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.modal1 {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  /background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content1 {
+  border-radius: 10px;
+  top: 50%;
+  transform: translatey(-50%);
+  position: relative;
+  bottom: 0;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  color: black;
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.close1 {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  transition: 0.4s;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.close1:hover {
+  color: #000;
+  transform: scale(1.5);
+}
+.modal-header1 {
+  border-radius: 10px 10px 0 0;
+  padding: 2px 16px;
+  background-color: #ffb8b8;
+  color: white;
+}
+
+.modal-body1 {
+  padding: 2px 16px;
+}
+
+.modal-footer1 {
+  padding: 2px 16px;
+  background-color: #5cb85c;
+  color: white;
+}
+.btn2:hover {
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
+  transform: translate(0px, -5px);
+}
+.btn2 {
+  position: absolute;
+  width: 350px;
+  height: 300px;
+  margin-left: 700px;
+  margin-top: 235px;
+  border: none;
+  display: block; /*因a為行內元素無法設定寬高 要改設成block*/
+  background-image: url(" https://1083836.github.io/hinokivillage/2222222.png");
+
+  /*下面此三行為最重要的技巧部份*/
+  text-indent: 104%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.modal2 {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  /background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content2 {
+  border-radius: 10px;
+  top: 50%;
+  transform: translatey(-50%);
+  position: relative;
+  bottom: 0;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  color: black;
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.close2 {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  transition: 0.4s;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.close2:hover {
+  color: #000;
+  transform: scale(1.5);
+}
+.modal-header2 {
+  border-radius: 10px 10px 0 0;
+  padding: 2px 16px;
+  background-color: #ffb8b8;
+  color: white;
+}
+
+.modal-body2 {
+  padding: 2px 16px;
+}
+
+.modal-footer2 {
+  padding: 2px 16px;
+  background-color: #5cb85c;
+  color: white;
+}
+.btn3:hover {
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
+  transform: translate(0px, -5px);
+}
+.btn3 {
+  position: absolute;
+  width: 350px;
+  height: 300px;
+  margin-left: 200px;
+  margin-top: 460px;
+  border: none;
+  display: block; /*因a為行內元素無法設定寬高 要改設成block*/
+  background-image: url(" https://1083836.github.io/hinokivillage/111111111.png");
+
+  /*下面此三行為最重要的技巧部份*/
+  text-indent: 104%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.modal3 {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  /background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content3 {
+  border-radius: 10px;
+  top: 50%;
+  transform: translatey(-50%);
+  position: relative;
+  bottom: 0;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  color: black;
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.close3 {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  transition: 0.4s;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.close3:hover {
+  color: #000;
+  transform: scale(1.5);
+}
+.modal-header3 {
+  border-radius: 10px 10px 0 0;
+  padding: 2px 16px;
+  background-color: #ffb8b8;
+  color: white;
+}
+
+.modal-body3 {
+  padding: 2px 16px;
+}
+
+.modal-footer3 {
+  padding: 2px 16px;
+  background-color: #5cb85c;
+  color: white;
+}
+.btn4:hover {
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
+  transform: translate(0px, -5px);
+}
+.btn4 {
+  position: absolute;
+  width: 350px;
+  height: 300px;
+  margin-left: 700px;
+  margin-top: 685px;
+  border: none;
+  display: block; /*因a為行內元素無法設定寬高 要改設成block*/
+  background-image: url(" https://1083836.github.io/hinokivillage/444444.png");
+
+  /*下面此三行為最重要的技巧部份*/
+  text-indent: 104%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.modal4 {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  /background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content4 {
+  border-radius: 10px;
+  top: 50%;
+  transform: translatey(-50%);
+  position: relative;
+  bottom: 0;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  color: black;
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.close4 {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  transition: 0.4s;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.close4:hover {
+  color: #000;
+  transform: scale(1.5);
+}
+.modal-header4 {
+  border-radius: 10px 10px 0 0;
+  padding: 2px 16px;
+  background-color: #ffb8b8;
+  color: white;
+}
+
+.modal-body4 {
+  padding: 2px 16px;
+}
+
+.modal-footer4 {
+  padding: 2px 16px;
+  background-color: #5cb85c;
+  color: white;
+}
+.outside2{
+    width: 100%;
+    height: 1350px;
+    background-color: #ece9cf;
+}
+.btn5:hover {
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
+  transform: translate(0px, -5px);
+}
+.btn5 {
+  position: absolute;
+  width: 350px;
+  height: 300px;
+  margin-left: 200px;
+  margin-top: 10px;
+  border: none;
+  display: block; /*因a為行內元素無法設定寬高 要改設成block*/
+  background-image: url("https://bruce1219.github.io/999/1111.jpg");
+  
+
+  /*下面此三行為最重要的技巧部份*/
+  text-indent: 104%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.modal5 {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  /background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content5 {
+  border-radius: 10px;
+  top: 50%;
+  transform: translatey(-50%);
+  position: relative;
+  bottom: 0;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  color: black;
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.close5 {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  transition: 0.4s;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.close5:hover {
+  color: #000;
+  transform: scale(1.5);
+}
+.modal-header5 {
+  border-radius: 10px 10px 0 0;
+  padding: 2px 16px;
+  background-color: #ffb8b8;
+  color: white;
+}
+
+.modal-body5 {
+  padding: 2px 16px;
+}
+
+.modal-footer5 {
+  padding: 2px 16px;
+  background-color: #5cb85c;
+  color: white;
+}
+.btn6:hover {
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
+  transform: translate(0px, -5px);
+}
+.btn6 {
+  position: absolute;
+  width: 350px;
+  height: 300px;
+  margin-left: 700px;
+  margin-top: 235px;
+  border: none;
+  display: block; /*因a為行內元素無法設定寬高 要改設成block*/
+  background-image: url("https://bruce1219.github.io/999/222.jpg");
+
+  /*下面此三行為最重要的技巧部份*/
+  text-indent: 104%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.modal6 {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  /background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content6 {
+  border-radius: 10px;
+  top: 50%;
+  transform: translatey(-50%);
+  position: relative;
+  bottom: 0;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  color: black;
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.close6 {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  transition: 0.4s;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.close6:hover {
+  color: #000;
+  transform: scale(1.5);
+}
+.modal-header6 {
+  border-radius: 10px 10px 0 0;
+  padding: 2px 16px;
+  background-color: #ffb8b8;
+  color: white;
+}
+
+.modal-body6 {
+  padding: 2px 16px;
+}
+
+.modal-footer6 {
+  padding: 2px 16px;
+  background-color: #5cb85c;
+  color: white;
+}
+.btn7:hover {
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
+  transform: translate(0px, -5px);
+}
+.btn7 {
+  position: absolute;
+  width: 350px;
+  height: 300px;
+  margin-left: 200px;
+  margin-top: 460px;
+  border: none;
+  display: block; /*因a為行內元素無法設定寬高 要改設成block*/
+  background-image: url("https://bruce1219.github.io/999/333.jpg");
+
+  /*下面此三行為最重要的技巧部份*/
+  text-indent: 104%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.modal7 {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  /background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content7 {
+  border-radius: 10px;
+  top: 50%;
+  transform: translatey(-50%);
+  position: relative;
+  bottom: 0;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  color: black;
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.close7 {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  transition: 0.4s;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.close7:hover {
+  color: #000;
+  transform: scale(1.5);
+}
+.modal-header7 {
+  border-radius: 10px 10px 0 0;
+  padding: 2px 16px;
+  background-color: #ffb8b8;
+  color: white;
+}
+
+.modal-body7 {
+  padding: 2px 16px;
+}
+
+.modal-footer7 {
+  padding: 2px 16px;
+  background-color: #5cb85c;
+  color: white;
+}
+.btn8:hover {
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
+  transform: translate(0px, -5px);
+}
+.btn8 {
+  position: absolute;
+  width: 350px;
+  height: 300px;
+  margin-left: 700px;
+  margin-top: 685px;
+  border: none;
+  display: block; /*因a為行內元素無法設定寬高 要改設成block*/
+  background-image: url("https://bruce1219.github.io/999/444.jpg");
+
+  /*下面此三行為最重要的技巧部份*/
+  text-indent: 104%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.modal8 {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  /background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content8 {
+  border-radius: 10px;
+  top: 50%;
+  transform: translatey(-50%);
+  position: relative;
+  bottom: 0;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  color: black;
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.close8 {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  transition: 0.4s;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.close8:hover {
+  color: #000;
+  transform: scale(1.5);
+}
+.modal-header8 {
+  border-radius: 10px 10px 0 0;
+  padding: 2px 16px;
+  background-color: #ffb8b8;
+  color: white;
+}
+
+.modal-body8 {
+  padding: 2px 16px;
+}
+
+.modal-footer8 {
+  padding: 2px 16px;
+  background-color: #5cb85c;
+  color: white;
+}
+.outside3{
+    width: 100%;
+    height: 1350px;
+    background-color: #ece9cf;
+}
+.btn9:hover {
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
+  transform: translate(0px, -5px);
+}
+.btn9{
+  position:absolute;
+  width: 350px;
+  height: 250px;
+  margin-left: 200px;
+  margin-top: 10px;
+  border: none;
+  display: block;/*因a為行內元素無法設定寬高 要改設成block*/
+  background-image: url("https://gina900109.github.io/movie/6.png");
+  
+  /*下面此三行為最重要的技巧部份*/
+  text-indent: 104%;   
+  overflow: hidden;
+  white-space: nowrap;
+}
+.modal9 {
+  display: none; 
+  position: fixed;
+  z-index: 1; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; /
+  background-color: rgba(0,0,0,0.4); 
+  
+}
+
+
+.modal-content9 {
+  border-radius:10px;
+  top:50%;
+  transform:translatey(-50%);
+  position: relative;
+  bottom: 0;
+  background-color: #fefefe;
+  margin:auto;
+  padding:0;
+  color:black;
+  width: 80%;
+  box-shadow:0 4px 8px 0
+rgba(0,0,0,0.2),0 6px 20px 0
+rgba(0,0,0,0.19);
+}
+
+
+.close9 {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  transition:0.4s;
+  text-decoration:none;
+  cursor:pointer;
+}
+
+.close9:hover{
+  color: #000;
+  transform:scale(1.5)
+}
+.modal-header9{
+  border-radius: 10px 10px 0 0;
+  padding: 2px 16px;
+  background-color: #ffb8b8;
+  color: white;
+}
+
+.modal-body9 {padding: 2px 16px;}
+
+.modal-footer9 {
+  padding: 2px 16px;
+  background-color: #5cb85c;
+  color: white;
+}
+.btn10:hover {
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
+  transform: translate(0px, -5px);
+}
+.btn10{
+  position:absolute;
+  width: 350px;
+  height: 250px;
+  margin-left: 700px;
+  margin-top: 235px;
+  border: none;
+  display: block;/*因a為行內元素無法設定寬高 要改設成block*/
+  background-image: url("https://gina900109.github.io/movie/7.png");
+  
+  /*下面此三行為最重要的技巧部份*/
+  text-indent: 104%;   
+  overflow: hidden;
+  white-space: nowrap;
+}
+.modal10 {
+  display: none; 
+  position: fixed;
+  z-index: 1; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; /
+  background-color: rgba(0,0,0,0.4); 
+  
+}
+
+
+.modal-content10 {
+  border-radius:10px;
+  top:50%;
+  transform:translatey(-50%);
+  position: relative;
+  bottom: 0;
+  background-color: #fefefe;
+  margin:auto;
+  padding:0;
+  color:black;
+  width: 80%;
+  box-shadow:0 4px 8px 0
+rgba(0,0,0,0.2),0 6px 20px 0
+rgba(0,0,0,0.19);
+}
+
+
+.close10 {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  transition:0.4s;
+  text-decoration:none;
+  cursor:pointer;
+}
+
+.close10:hover{
+  color: #000;
+  transform:scale(1.5)
+}
+.modal-header10 {
+  border-radius: 10px 10px 0 0;
+  padding: 2px 16px;
+  background-color: #ffb8b8;
+  color: white;
+}
+
+.modal-body10{padding: 2px 16px;}
+
+.modal-footer10 {
+  padding: 2px 16px;
+  background-color: #5cb85c;
+  color: white;
+}
+.btn11:hover {
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
+  transform: translate(0px, -5px);
+}
+.btn11{
+  position:absolute;
+  width: 350px;
+  height: 250px;
+  margin-left: 200px;
+  margin-top: 460px;
+  border: none;
+  display: block;/*因a為行內元素無法設定寬高 要改設成block*/
+  background-image: url("https://gina900109.github.io/movie/10.png");
+  
+  /*下面此三行為最重要的技巧部份*/
+  text-indent: 104%;   
+  overflow: hidden;
+  white-space: nowrap;
+}
+.modal11 {
+  display: none; 
+  position: fixed;
+  z-index: 1; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; /
+  background-color: rgba(0,0,0,0.4); 
+  
+}
+
+
+.modal-content11 {
+  border-radius:10px;
+  top:50%;
+  transform:translatey(-50%);
+  position: relative;
+  bottom: 0;
+  background-color: #fefefe;
+  margin:auto;
+  padding:0;
+  color:black;
+  width: 80%;
+  box-shadow:0 4px 8px 0
+rgba(0,0,0,0.2),0 6px 20px 0
+rgba(0,0,0,0.19);
+}
+
+
+.close11 {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  transition:0.4s;
+  text-decoration:none;
+  cursor:pointer;
+}
+
+.close11:hover{
+  color: #000;
+  transform:scale(1.5)
+}
+.modal-header11 {
+  border-radius: 10px 10px 0 0;
+  padding: 2px 16px;
+  background-color: #ffb8b8;
+  color: white;
+}
+
+.modal-body11 {padding: 2px 16px;}
+
+.modal-footer11 {
+  padding: 2px 16px;
+  background-color: #5cb85c;
+  color: white;
+}
+.btn12:hover {
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
+  transform: translate(0px, -5px);
+}
+.btn12{
+  position:absolute;
+  width: 350px;
+  height: 250px;
+  margin-left: 700px;
+  margin-top: 685px;
+  border: none;
+  display: block;/*因a為行內元素無法設定寬高 要改設成block*/
+  background-image: url("https://gina900109.github.io/movie/11.png");
+  
+  /*下面此三行為最重要的技巧部份*/
+  text-indent: 104%;   
+  overflow: hidden;
+  white-space: nowrap;
+}
+.modal12{
+  display: none; 
+  position: fixed;
+  z-index: 1; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; /
+  background-color: rgba(0,0,0,0.4); 
+  
+}
+
+
+.modal-content12 {
+  border-radius:10px;
+  top:50%;
+  transform:translatey(-50%);
+  position: relative;
+  bottom: 0;
+  background-color: #fefefe;
+  margin:auto;
+  padding:0;
+  color:black;
+  width: 80%;
+  box-shadow:0 4px 8px 0
+rgba(0,0,0,0.2),0 6px 20px 0
+rgba(0,0,0,0.19);
+}
+
+
+.close12 {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  transition:0.4s;
+  text-decoration:none;
+  cursor:pointer;
+}
+
+.close12:hover{
+  color: #000;
+  transform:scale(1.5)
+}
+.modal-header12 {
+  border-radius: 10px 10px 0 0;
+  padding: 2px 16px;
+  background-color: #ffb8b8;
+  color: white;
+}
+
+.modal-body12 {padding: 2px 16px;}
+
+.modal-footer12 {
+  padding: 2px 16px;
+  background-color: #5cb85c;
+  color: white;
+}
